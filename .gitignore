@@ -19,6 +19,9 @@ cs_fixer*
 /public/app/themes/larapress-client.theme/
 /public/app/upgrade/
 
+### Storage
+storage/twig/
+storage/views/
 ### Environment Credentials
 .env
 .env.*

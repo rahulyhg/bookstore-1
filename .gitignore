@@ -1,0 +1,29 @@
+### Miscellaneous
+.DS_Store
+Thumbs.db
+
+### Composer
+composer.lock
+vendor/
+
+### IDE
+.idea/
+
+### PHPCS
+cs_fixer*
+
+### Wordpress
+/public/core/*
+!/public/core/.gitkeep
+/public/app/mu-plugins/larapress-framework/
+/public/app/themes/larapress-client.theme/
+/public/app/uploads/
+/public/app/upgrade/
+
+### Environment Credentials
+.env
+.env.*
+.env.development
+.env.production
+.env.staging
+!.env.example

@@ -1,9 +1,9 @@
 <?php
 /*
- * Themosis Theme.
+ * LaraPress Theme.
  *
- * @author  Julien Lambé <julien@themosis.com>
- * @link 	http://www.themosis.com/
+ * @author  Patrick Stewart <mrpastewart@larapress.io>
+ * @link 	http://www.larapress.io/
  */
 
 /*----------------------------------------------------*/
@@ -11,14 +11,14 @@
 /*----------------------------------------------------*/
 defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 
-if (!function_exists('themosis_theme_assets')) {
+if (!function_exists('larapress_theme_assets')) {
     /**
      * Return the application theme public assets directory URL.
      * Public assets are stored into the `dist` directory.
      *
      * @return string
      */
-    function themosis_theme_assets()
+    function larapress_theme_assets()
     {
         if (is_multisite() && SUBDOMAIN_INSTALL) {
             $segments = explode('themes', get_template_directory_uri());
@@ -34,13 +34,13 @@ if (!function_exists('themosis_theme_assets')) {
 /*
  * Check if the framework is available.
  */
-if (!isset($GLOBALS['themosis'])) {
+if (!isset($GLOBALS['larapress'])) {
     /*
      * Those strings are not translated.
      * We want to load only one textdomain for the theme with the domain
      * defined inside the theme.config.php file.
      */
-    $text = 'The theme is only compatible with the Themosis framework. Please install the Themosis framework.';
+    $text = 'The theme is only compatible with the LaraPress framework. Please install the LaraPress framework.';
     $title = 'WordPress - Missing framework';
 
     /*
@@ -68,25 +68,25 @@ $paths['theme'] = __DIR__.DS;
 $paths['theme.resources'] = __DIR__.DS.'resources'.DS;
 $paths['theme.admin'] = __DIR__.DS.'resources'.DS.'admin'.DS;
 
-themosis_set_paths($paths);
+larapress_set_paths($paths);
 
 /*
  * Register all paths into the service container.
  */
-$theme->registerAllPaths(themosis_path());
+$theme->registerAllPaths(larapress_path());
 
 /*
  * Load theme configuration files.
  */
 $theme['config.finder']->addPaths([
-    themosis_path('theme.resources').'config'.DS,
+    larapress_path('theme.resources').'config'.DS,
 ]);
 
 /*
  * Autoloading.
  */
 $loader = new \Composer\Autoload\ClassLoader();
-$classes = \Themosis\Facades\Config::get('loading');
+$classes = \LaraPress\Facades\Config::get('loading');
 foreach ($classes as $prefix => $path) {
     $loader->addPsr4($prefix, $path);
 }
@@ -95,7 +95,7 @@ $loader->register();
 /*
  * Register theme views folder path.
  */
-$theme['view.finder']->addLocation(themosis_path('theme.resources').'views');
+$theme['view.finder']->addLocation(larapress_path('theme.resources').'views');
 
 /*
  * Update Twig Loaded registered paths.
@@ -106,13 +106,13 @@ $theme['twig.loader']->setPaths($theme['view.finder']->getPaths());
  * Register theme public assets folder [dist directory].
  */
 $theme['asset.finder']->addPaths([
-    themosis_theme_assets() => themosis_path('theme').'dist',
+    larapress_theme_assets() => larapress_path('theme').'dist',
 ]);
 
 /*
  * Theme constants.
  */
-$constants = new Themosis\Config\Constant($theme['config.factory']->get('constants'));
+$constants = new LaraPress\Config\Constant($theme['config.factory']->get('constants'));
 $constants->make();
 
 /*
@@ -148,7 +148,7 @@ foreach ($providers as $provider) {
  * Theme cleanup.
  */
 if ($theme['config.factory']->get('theme.cleanup')) {
-    $theme['action']->add('init', 'themosis_theme_cleanup');
+    $theme['action']->add('init', 'larapress_theme_cleanup');
 }
 
 /*
@@ -157,37 +157,37 @@ if ($theme['config.factory']->get('theme.cleanup')) {
 $access = $theme['config.factory']->get('theme.access');
 
 if (!empty($access) && is_array($access)) {
-    $theme['action']->add('init', 'themosis_theme_restrict');
+    $theme['action']->add('init', 'larapress_theme_restrict');
 }
 
 /*
  * Theme templates.
  */
-$templates = new Themosis\Config\Template($theme['config.factory']->get('templates'), $theme['filter']);
+$templates = new LaraPress\Config\Template($theme['config.factory']->get('templates'), $theme['filter']);
 $templates->make();
 
 /*
  * Theme image sizes.
  */
-$images = new Themosis\Config\Images($theme['config.factory']->get('images'), $theme['filter']);
+$images = new LaraPress\Config\Images($theme['config.factory']->get('images'), $theme['filter']);
 $images->make();
 
 /*
  * Theme menus.
  */
-$menus = new Themosis\Config\Menu($theme['config.factory']->get('menus'));
+$menus = new LaraPress\Config\Menu($theme['config.factory']->get('menus'));
 $menus->make();
 
 /*
  * Theme sidebars.
  */
-$sidebars = new Themosis\Config\Sidebar($theme['config.factory']->get('sidebars'));
+$sidebars = new LaraPress\Config\Sidebar($theme['config.factory']->get('sidebars'));
 $sidebars->make();
 
 /*
  * Theme supports.
  */
-$supports = new Themosis\Config\Support($theme['config.factory']->get('supports'));
+$supports = new LaraPress\Config\Support($theme['config.factory']->get('supports'));
 $supports->make();
 
 /*
@@ -195,7 +195,7 @@ $supports->make();
  * Autoload files in alphabetical order.
  */
 $loader = $theme['loader']->add([
-    themosis_path('theme.admin'),
+    larapress_path('theme.admin'),
 ]);
 
 $loader->load();
@@ -204,7 +204,7 @@ $loader->load();
  * Theme widgets.
  */
 $widgetLoader = $theme['loader.widget']->add([
-    themosis_path('theme.resources').'widgets'.DS,
+    larapress_path('theme.resources').'widgets'.DS,
 ]);
 
 $widgetLoader->load();
@@ -212,12 +212,12 @@ $widgetLoader->load();
 /*
  * Theme global JS object.
  */
-$theme['action']->add('wp_head', 'themosis_theme_global_object');
+$theme['action']->add('wp_head', 'larapress_theme_global_object');
 
 /**
  * Stop editing. Happy development.
  */
-function themosis_theme_cleanup()
+function larapress_theme_cleanup()
 {
     global $wp_widget_factory;
 
@@ -239,9 +239,9 @@ function themosis_theme_cleanup()
  * logged-in users only. Non authenticated users will
  * be redirected to the home page.
  */
-function themosis_theme_restrict()
+function larapress_theme_restrict()
 {
-    $access = Themosis\Facades\Config::get('theme.access');
+    $access = LaraPress\Facades\Config::get('theme.access');
 
     if (is_admin()) {
         $user = wp_get_current_user();
@@ -259,12 +259,12 @@ function themosis_theme_restrict()
  * Callback used to implement a JS global object
  * for your scripts. Complement the asset localize API.
  */
-function themosis_theme_global_object()
+function larapress_theme_global_object()
 {
-    $namespace = Themosis\Facades\Config::get('theme.namespace');
-    $url = admin_url().Themosis\Facades\Config::get('theme.ajaxurl').'.php';
+    $namespace = LaraPress\Facades\Config::get('theme.namespace');
+    $url = admin_url().LaraPress\Facades\Config::get('theme.ajaxurl').'.php';
 
-    $datas = apply_filters('themosisGlobalObject', []);
+    $datas = apply_filters('larapressGlobalObject', []);
 
     $output = "<script type=\"text/javascript\">\n\r";
     $output .= "//<![CDATA[\n\r";

@@ -5,7 +5,7 @@ namespace Theme\Controllers;
 use Dev\Bookstore\Books\Models\Books;
 use Dev\Bookstore\Faqs\Models\Faqs;
 use Theme\Models\Posts;
-use Themosis\Route\BaseController;
+use LaraPress\Route\BaseController;
 
 class Pages extends BaseController
 {

@@ -2,7 +2,7 @@
 
 namespace Dev\Bookstore\Books\Controllers;
 
-use Themosis\Route\BaseController;
+use LaraPress\Route\BaseController;
 
 class Sample extends BaseController
 {

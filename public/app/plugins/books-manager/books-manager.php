@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name: Books Manager
- * Plugin URI: http://bookstore.dev/
+ * Plugin URI: http://bookstore.loc/
  * Description: Bookstore custom plugin in order to handle a collection of books.
  * Version: 1.0.0
- * Author: Themosis
- * Author URI: http://framework.themosis.com/
+ * Author: LaraPress
+ * Author URI: http://www.larapress.io/
  * Text Domain: books-manager
  * Domain Path: /languages
  */
@@ -53,8 +53,8 @@ $vars = [
  * Verify that the main framework is loaded.
  */
 add_action('admin_notices', function () use ($vars) {
-    if (!class_exists('\Themosis\Foundation\Application')) {
-        printf('<div class="notice notice-error"><p>%s</p></div>', __('This plugin requires the Themosis framework in order to work.', BOOKS_MANAGER_TD));
+    if (!class_exists('\LaraPress\Foundation\Application')) {
+        printf('<div class="notice notice-error"><p>%s</p></div>', __('This plugin requires the LaraPress framework in order to work.', BOOKS_MANAGER_TD));
     }
 
     /*
@@ -73,13 +73,13 @@ $paths['plugin.'.$vars['namespace']] = __DIR__.DS;
 $paths['plugin.'.$vars['namespace'].'.resources'] = __DIR__.DS.'resources'.DS;
 $paths['plugin.'.$vars['namespace'].'.admin'] = __DIR__.DS.'resources'.DS.'admin'.DS;
 
-themosis_set_paths($paths);
+larapress_set_paths($paths);
 
 /*
  * Setup plugin config files.
  */
 container('config.finder')->addPaths([
-    themosis_path('plugin.'.$vars['namespace'].'.resources').'config'.DS,
+    larapress_path('plugin.'.$vars['namespace'].'.resources').'config'.DS,
 ]);
 
 /*
@@ -96,13 +96,13 @@ $loader->register();
  * Register plugin public assets folder [dist directory].
  */
 container('asset.finder')->addPaths([
-    plugins_url('dist', __FILE__) => themosis_path('plugin.'.$vars['namespace']).'dist',
+    plugins_url('dist', __FILE__) => larapress_path('plugin.'.$vars['namespace']).'dist',
 ]);
 
 /*
  * Register plugin views.
  */
-container('view.finder')->addLocation(themosis_path('plugin.'.$vars['namespace'].'.resources').'views');
+container('view.finder')->addLocation(larapress_path('plugin.'.$vars['namespace'].'.resources').'views');
 
 /*
  * Update Twig Loader registered paths.
@@ -135,7 +135,7 @@ container('action')->add('plugins_loaded', function () use ($vars) {
      * Autoload files in alphabetical order.
      */
     $loader = container('loader')->add([
-        themosis_path('plugin.'.$vars['namespace'].'.admin'),
+        larapress_path('plugin.'.$vars['namespace'].'.admin'),
     ]);
 
     $loader->load();

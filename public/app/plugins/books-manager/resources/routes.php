@@ -1,6 +1,6 @@
 <?php
 
-use Themosis\Facades\Route;
+use LaraPress\Facades\Route;
 
 /**
  * Plugin custom routes.

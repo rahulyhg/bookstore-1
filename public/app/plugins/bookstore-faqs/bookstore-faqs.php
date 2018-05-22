@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name: Bookstore Faqs
- * Plugin URI: http://bookstore.dev/
+ * Plugin URI: http://bookstore.loc/
  * Description: Bookstore FAQs.
  * Version: 1.0.0
- * Author: Themosis
- * Author URI: http://framework.themosis.com/
+ * Author: LaraPress
+ * Author URI: http://www.larapress.io/
  * Text Domain: bookstore-faqs
  * Domain Path: /languages
  */
@@ -16,7 +16,7 @@
  * and the Composer auto-loader.
  */
 use Composer\Autoload\ClassLoader;
-use Themosis\Facades\PostType;
+use LaraPress\Facades\PostType;
 
 /**
  * Plugin textdomain.

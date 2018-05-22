@@ -2,7 +2,7 @@
 
 namespace Theme\Providers;
 
-use Themosis\Foundation\ServiceProvider;
+use LaraPress\Foundation\ServiceProvider;
 
 class TwigService extends ServiceProvider
 {

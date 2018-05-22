@@ -1,12 +1,12 @@
 {
   "name": "bookstore/books",
   "description": "Bookstore custom plugin in order to handle a collection of books.",
-  "keywords": ["themosis", "plugin"],
+  "keywords": ["larapress", "plugin"],
   "authors": [
     {
-      "name": "Themosis",
-      "email": "support@themosis.com",
-      "homepage": "http://framework.themosis.com"
+      "name": "LaraPress",
+      "email": "support@larapress.io",
+      "homepage": "http://www.larapress.io"
     }
   ],
   "type": "wordpress-plugin",

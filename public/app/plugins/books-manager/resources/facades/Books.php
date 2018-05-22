@@ -2,7 +2,7 @@
 
 namespace Dev\Bookstore\Books\Facades;
 
-use Themosis\Facades\Facade;
+use LaraPress\Facades\Facade;
 
 class Books extends Facade
 {

@@ -7,7 +7,7 @@
  */
 $home = (int) get_option('page_on_front');
 
-if (themosis_is_post($home)) {
+if (larapress_is_post($home)) {
     $books = Books::find(['posts_per_page' => -1])->select()->get();
 
     // Metabox for the front page.
@@ -23,7 +23,7 @@ if (themosis_is_post($home)) {
 // Remove editor from home page.
 /*-----------------------------------------------------------------------*/
 Action::add('init', function () use ($home) {
-    if (themosis_is_post($home)) {
+    if (larapress_is_post($home)) {
         remove_post_type_support('page', 'editor');
     }
 });

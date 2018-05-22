@@ -1,7 +1,7 @@
 {
-  "name": "themosis-bookstore",
+  "name": "larapress-bookstore",
   "version": "1.3.0",
-  "description": "Themosis framework boostore demo project theme.",
+  "description": "LaraPress framework boostore demo project theme.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

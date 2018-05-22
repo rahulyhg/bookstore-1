@@ -2,8 +2,8 @@
 
 namespace Dev\Bookstore\Books\Services;
 
-use Themosis\Facades\Asset;
-use Themosis\Foundation\ServiceProvider;
+use LaraPress\Facades\Asset;
+use LaraPress\Foundation\ServiceProvider;
 
 class AssetsProvider extends ServiceProvider
 {

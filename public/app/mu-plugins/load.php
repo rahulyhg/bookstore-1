@@ -2,7 +2,7 @@
 /*
 Plugin Name: Mu-Plugins Loader
 Description: Simple loader in order to run the LaraPress framework core files.
-Author: Julien Lambé
+Author: Patrick Stewart
 Version: 1.0
 Author URI: http://www.larapress.io/
 */

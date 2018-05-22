@@ -3,7 +3,7 @@
 namespace Dev\Bookstore\Books\Services;
 
 use Dev\Bookstore\Books\Models\Books;
-use Themosis\Foundation\ServiceProvider;
+use LaraPress\Foundation\ServiceProvider;
 
 class ModelsProvider extends ServiceProvider
 {

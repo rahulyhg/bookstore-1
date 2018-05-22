@@ -8,8 +8,8 @@ return [
     *
     * The key is the namespace and key's value contains one or more paths to your classes.
     */
-    'Theme\\Controllers\\' => themosis_path('theme.resources').'controllers',
-    'Theme\\Models\\' => themosis_path('theme.resources').'models',
-    'Theme\\Providers\\' => themosis_path('theme.resources').'providers'
+    'Theme\\Controllers\\' => larapress_path('theme.resources').'controllers',
+    'Theme\\Models\\' => larapress_path('theme.resources').'models',
+    'Theme\\Providers\\' => larapress_path('theme.resources').'providers'
 
 ];

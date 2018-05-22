@@ -1,9 +1,9 @@
 <?php
 
-use Themosis\Facades\Field;
-use Themosis\Facades\Metabox;
-use Themosis\Facades\PostType;
-use Themosis\Facades\View;
+use LaraPress\Facades\Field;
+use LaraPress\Facades\Metabox;
+use LaraPress\Facades\PostType;
+use LaraPress\Facades\View;
 
 /*
  * Register books custom post type.

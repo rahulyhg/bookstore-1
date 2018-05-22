@@ -2,8 +2,8 @@
 
 namespace Theme\Providers;
 
-use Themosis\Facades\Asset;
-use Themosis\Foundation\ServiceProvider;
+use LaraPress\Facades\Asset;
+use LaraPress\Foundation\ServiceProvider;
 
 class AssetService extends ServiceProvider
 {

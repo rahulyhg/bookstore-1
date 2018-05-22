@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Plugin Boilerplate\n"
 "POT-Creation-Date: 2016-11-16 12:14+0100\n"
 "PO-Revision-Date: 2016-11-16 12:14+0100\n"
-"Last-Translator: Themosis <support@themosis.com>\n"
+"Last-Translator: LaraPress <support@larapress.io>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-3: resources/views\n"
 
 #: plugin-name.php:57
-msgid "This plugin requires the Themosis framework in order to work."
+msgid "This plugin requires the LaraPress framework in order to work."
 msgstr ""
 
 #: plugin-name.php:65

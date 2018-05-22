@@ -2,8 +2,8 @@
 
 namespace Theme\Providers;
 
-use Themosis\Facades\Route;
-use Themosis\Foundation\ServiceProvider;
+use LaraPress\Facades\Route;
+use LaraPress\Foundation\ServiceProvider;
 
 class RoutingService extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class RoutingService extends ServiceProvider
         Route::group([
             'namespace' => 'Theme\Controllers'
         ], function () {
-            require themosis_path('theme.resources').'routes.php';
+            require larapress_path('theme.resources').'routes.php';
         });
     }
 }

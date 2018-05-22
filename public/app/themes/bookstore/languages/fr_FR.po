@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Themosis Theme\n"
+"Project-Id-Version: LaraPress Theme\n"
 "POT-Creation-Date: 2016-06-02 10:29+0100\n"
 "PO-Revision-Date: 2016-06-02 10:36+0100\n"
-"Last-Translator: Julien Lambé <julien@themosis.com>\n"
+"Last-Translator: Patrick Stewart <mrpastewart@larapress.io>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -34,8 +34,8 @@ msgid "Congratulations!"
 msgstr "Félicitations!"
 
 #: resources/views/welcome.php:175
-msgid "The Themosis framework is running."
-msgstr "Le framework Themosis est installé correctement."
+msgid "The LaraPress framework is running."
+msgstr "Le framework LaraPress est installé correctement."
 
 #: resources/views/welcome.php:180
 msgid "Get started:"
@@ -48,8 +48,8 @@ msgstr ""
 "Parcourez la documentation et développez votre prochain projet WordPress."
 
 #: resources/views/welcome.php:182
-msgid "Themosis framework documentation"
-msgstr "Documentation du framework Themosis"
+msgid "LaraPress framework documentation"
+msgstr "Documentation du framework LaraPress"
 
 #: resources/views/welcome.php:182
 msgid "View documentation"

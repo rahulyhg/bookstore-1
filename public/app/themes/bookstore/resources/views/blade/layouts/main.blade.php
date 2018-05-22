@@ -13,7 +13,7 @@
 <header>
     <div id="bookstore-logo">
         <a href="{{ home_url() }}">
-            <img src="{{ themosis_theme_assets() }}/images/logo.png" alt="Bookstore" width="154" height="40">
+            <img src="{{ larapress_theme_assets() }}/images/logo.png" alt="Bookstore" width="154" height="40">
         </a>
     </div>
     <div id="bookstore-navigation">
